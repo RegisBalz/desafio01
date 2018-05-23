@@ -33,7 +33,11 @@ public class CursoServlet extends HttpServlet {
             while (rs.next()) {
                 saida.write("<ul>");
                 saida.write("<li>");
+                saida.write("-> " + rs.getInt("id") + "<br>");
                 saida.write("-> " + rs.getString("curso") + "<br>");
+                saida.write("-> " + rs.getString("turno") + "<br>");
+                saida.write("-> " + rs.getInt("qtde_estudantes") + "<br>");
+                saida.write("-> " + rs.getDate("data_cadastro") + "<br>");
                 saida.write("</li>");
                 saida.write("</ul>");
             }
@@ -49,7 +53,7 @@ public class CursoServlet extends HttpServlet {
         
         String id = req.getParameter("id");
         String curso = req.getParameter("curso");
-        String turno = req.getParameter("curso");
+        String turno = req.getParameter("turno");
         String qtdeEstudantes = req.getParameter("qtde_estudantes");
         String dataCadastro = req.getParameter("data_cadastro");
         
